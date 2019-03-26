@@ -1,0 +1,60 @@
+{
+  "name": "AttachedFile",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": false,
+      "description": "Name of asset"
+    },
+    "filename": {
+      "type": "string",
+      "required": false,
+      "description": "Filename"
+    },
+    "type": {
+      "type": "string",
+      "required": false,
+      "description": "Mime type of asset"
+    },
+    "size": {
+      "type": "number",
+      "required": false,
+      "description": "Size in bytes of asset"
+    },
+    "url": {
+      "type": "string",
+      "required": false,
+      "description": "Path url of asset"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "upload":{
+      "accepts": [
+        { "arg": "req", "type": "object", "http": { "source": "req" } },
+        { "arg": "res", "type": "object", "http": { "source": "res" } },
+        { "arg": "body", "type": "object", "http": { "source": "body" } }
+      ],
+      "returns": [
+        {
+          "arg": "fileObject",
+          "type": "object",
+          "root": true
+        }
+      ],
+      "http": {
+        "verb": "post",
+        "path": "/upload",
+        "status": 201
+      }
+    }
+
+  }
+}

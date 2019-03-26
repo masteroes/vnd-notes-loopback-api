@@ -1,0 +1,120 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: vnd-notes-loopback-api
+basePath: /api
+paths:
+  /Notes/createNote:
+    post:
+      tags:
+        - Notes
+      operationId: Notes.createNote
+      parameters:
+        - name: client-id
+          in: header
+          required: false
+          type: string
+        - name: data
+          in: body
+          description: Note to be saved
+          required: false
+          schema:
+            $ref: '#/definitions/Notes'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+  /AttachedFiles/upload:
+    post:
+      tags:
+        - AttachedFile
+      operationId: AttachedFile.upload
+      parameters:
+        - name: body
+          in: body
+          required: false
+          schema:
+            type: object
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+  /locations/geocode:
+    get:
+      tags:
+        - location
+      operationId: location.geocode
+      parameters:
+        - name: street
+          in: query
+          required: false
+          type: string
+        - name: city
+          in: query
+          required: false
+          type: string
+        - name: zipcode
+          in: query
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+tags:
+  - name: Notes
+  - name: AttachedFile
+  - name: location
+consumes:
+  - application/json
+  - application/x-www-form-urlencoded
+  - application/xml
+  - text/xml
+produces:
+  - application/json
+  - application/xml
+  - text/xml
+  - application/javascript
+  - text/javascript
+definitions:
+  Notes:
+    properties:
+      userId:
+        type: string
+      notesID:
+        type: string
+      content:
+        type: string
+      attachment:
+        type: string
+      tags:
+        type: array
+        items:
+          type: string
+      location:
+        $ref: '#/definitions/GeoPoint'
+      createdAt:
+        type: string
+        format: date-time
+      updatedAt:
+        type: string
+        format: date-time
+    required:
+      - userId
+      - notesID
+      - content
+      - createdAt
+      - updatedAt
+    additionalProperties: false
+  GeoPoint:
+    properties:
+      lat:
+        type: number
+      lng:
+        type: number

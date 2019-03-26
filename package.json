@@ -1,0 +1,77 @@
+{
+  "name": "vnd-notes-loopback-api",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node .",
+    "start:mock:server": "docker run -it -d -p 1080:1080 jamesdbloom/mockserver",
+    "setup-mocks": "node ./mocks/mock-server/setup.js",
+    "test:coverage": "nyc",
+    "test:unit": "mocha --exit './common/**/*.js'",
+    "format": "semistandard --env mocha --fix",
+    "test": "npm run test:coverage npm run test:unit "
+  },
+  "dependencies": {
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "dotenv": "7.0.0",
+    "helmet": "^3.10.0",
+    "loopback": "^3.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.2.0",
+    "loopback-component-logger": "1.0.0",
+    "loopback-component-storage": "3.5.0",
+    "loopback-connector-mongodb": "3.9.2",
+    "loopback-connector-rest": "3.4.1",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^3.0.0"
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "eslint": "5.15.3",
+    "eslint-config-loopback": "^8.0.0",
+    "eslint-config-semistandard": "13.0.0",
+    "eslint-config-standard": "12.0.0",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-node": "8.0.1",
+    "eslint-plugin-promise": "4.0.1",
+    "eslint-plugin-standard": "4.0.0",
+    "mocha": "6.0.2",
+    "mochawesome": "3.1.1",
+    "mockserver-client": "5.5.1",
+    "nyc": "13.3.0",
+    "sinon": "7.3.0",
+    "supertest": "4.0.2"
+  },
+  "nyc": {
+    "include": [
+      "common/**/*.js"
+    ],
+    "exclude": [
+      "common/**/*.spec.js",
+      "server/boot/*",
+      "server/datasources/*",
+      "server/server.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text",
+      "text-summary"
+    ],
+    "check-coverage": true,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "vnd-notes-loopback-api"
+}

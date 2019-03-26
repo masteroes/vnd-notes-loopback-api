@@ -1,0 +1,81 @@
+{
+  "name": "Notes",
+  "base": "Model",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "notesID": {
+      "type": "string",
+      "id": true
+    },
+    "content": {
+      "type": "string",
+      "required": true
+    },
+    "attachment": {
+      "type": "string",
+      "required": false
+    },
+    "tags": {
+      "type": [
+        "string"
+      ],
+      "required": false
+    },
+    "location": {
+      "type": "GeoPoint"
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
+    },
+    "updatedAt": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "createNote": {
+      "accepts": [
+        {
+          "arg": "client-id",
+          "type": "string",
+          "http": {
+            "source": "header"
+          }
+        },
+        {
+          "arg": "data",
+          "type": "object",
+          "description": "Note to be saved",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "body",
+          "type": "object",
+          "root": true
+        }
+      ],
+      "http": {
+        "verb": "post",
+        "path": "/createNote",
+        "status": 201
+      }
+    }
+  }
+}

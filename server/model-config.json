@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "notesDB",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "notesDB",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "notesDB",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "notesDB",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "notesDB",
+    "public": false
+  },
+  "Notes": {
+    "dataSource": "notesDB",
+    "public": true
+  },
+  "Container": {
+    "dataSource": "storage",
+    "public": false
+  },
+  "AttachedFile": {
+    "dataSource": "notesDB",
+    "public": true
+  },
+  "location": {
+    "dataSource": "geoLocation",
+    "public": true
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "results": [
+    {
+      "address_components": [
+        {
+          "long_name": "1",
+          "short_name": "1",
+          "types": [
+            "street_number"
+          ]
+        },
+        {
+          "long_name": "Jardine Road",
+          "short_name": "Jardine Rd",
+          "types": [
+            "route"
+          ]
+        },
+        {
+          "long_name": "St Katharine's & Wapping",
+          "short_name": "St Katharine's & Wapping",
+          "types": [
+            "neighborhood",
+            "political"
+          ]
+        },
+        {
+          "long_name": "London",
+          "short_name": "London",
+          "types": [
+            "postal_town"
+          ]
+        },
+        {
+          "long_name": "Greater London",
+          "short_name": "Greater London",
+          "types": [
+            "administrative_area_level_2",
+            "political"
+          ]
+        },
+        {
+          "long_name": "England",
+          "short_name": "England",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "United Kingdom",
+          "short_name": "GB",
+          "types": [
+            "country",
+            "political"
+          ]
+        },
+        {
+          "long_name": "E1W 3WD",
+          "short_name": "E1W 3WD",
+          "types": [
+            "postal_code"
+          ]
+        }
+      ],
+      "formatted_address": "1 Jardine Rd, St Katharine's & Wapping, London E1W 3WD, UK",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 51.5103011,
+            "lng": -0.04306629999999999
+          },
+          "southwest": {
+            "lat": 51.510075,
+            "lng": -0.0437609
+          }
+        },
+        "location": {
+          "lat": 51.5101771,
+          "lng": -0.0436857
+        },
+        "location_type": "ROOFTOP",
+        "viewport": {
+          "northeast": {
+            "lat": 51.5115370302915,
+            "lng": -0.04206461970849796
+          },
+          "southwest": {
+            "lat": 51.5088390697085,
+            "lng": -0.04476258029150203
+          }
+        }
+      },
+      "partial_match": true,
+      "place_id": "ChIJPQ2NK9QCdkgRppd_E5x9jEk",
+      "types": [
+        "premise"
+      ]
+    }
+  ],
+  "status": "OK"
+}

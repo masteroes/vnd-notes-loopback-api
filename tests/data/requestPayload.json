@@ -1,0 +1,15 @@
+{
+  "userId": "string",
+  "notesID": "string",
+  "content": "string",
+  "attachment": "string",
+  "tags": [
+    "string"
+  ],
+  "location": {
+    "lat": 0,
+    "lng": 0
+  },
+  "createdAt": "2019-03-26T01:56:24.314Z",
+  "updatedAt": "2019-03-26T01:56:24.314Z"
+}
