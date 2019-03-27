@@ -13,29 +13,6 @@
       "./mixins"
     ]
   },
-  "User": {
-    "dataSource": "notesDB",
-    "public": false
-  },
-  "AccessToken": {
-    "dataSource": "notesDB",
-    "public": false
-  },
-  "ACL": {
-    "dataSource": "notesDB",
-    "public": false
-  },
-  "RoleMapping": {
-    "dataSource": "notesDB",
-    "public": false,
-    "options": {
-      "strictObjectIDCoercion": true
-    }
-  },
-  "Role": {
-    "dataSource": "notesDB",
-    "public": false
-  },
   "Notes": {
     "dataSource": "notesDB",
     "public": true

@@ -1,5 +1,7 @@
+const sinon = require('sinon');
 const { expect } = require('chai');
 const attachedFile = require('./attached-file');
+const formidable = require('formidable').IncomingForm();
 
 const responseMock = {
   'name': 'Hello',
@@ -17,10 +19,23 @@ describe('models/international-payment-consents.js', () => {
       app: {
         models: {
           Container: {
-            upload: (req, res, body, cb) => Promise.resolve(responseMock)
+            upload: (req, res, body, cb) => Promise.resolve({
+              files: {
+                file: ['file1']
+              }
+            })
+          }
+        },
+        dataSources: {
+          storage: {
+            settings: {
+              name: 'storage',
+              root: 'root'
+            }
           }
         }
-      }
+      },
+      create: () => Promise.resolve(responseMock)
     };
     attachedFile(model);
   });
@@ -30,14 +45,20 @@ describe('models/international-payment-consents.js', () => {
   });
 
   it('attachedFile should return the correct response', async () => {
-    const requestPayload = {
-      'notesID': '5c998717b06bd21da8856e23',
-      'content': 'string'
-    };
+    sinon.stub(formidable, 'parse').callsFake(() => ({
+      fields: 'fields'
+    }));
 
     const output = await model.upload(
-      'userId',
-      requestPayload);
+      {
+        headers: {
+          'content-type': 'multipart/formdata'
+        },
+        on: () => {}
+      },
+      {},
+      null,
+      null);
 
     expect(output).to.deep.equal(responseMock);
   });

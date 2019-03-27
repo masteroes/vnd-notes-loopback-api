@@ -1,7 +1,7 @@
 {
   "name": "location",
   "base": "Model",
-  "idInjection": true,
+  "idInjection": false,
   "options": {
     "validateUpsert": true
   },
