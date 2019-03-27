@@ -51,14 +51,14 @@ You can run this in your development environment via a local node Server.
 All tests are written in javascript. The unit tests used chai, mocha and adjacent to main files in *.spec.js files.
 Component tests used supertest and  in tests/component/supertest directory. They can be run via below commands in terminal.
 
-npm start - Node server start
-npm run debug - Node server debugger
-npm run format - Eslint execution.
-npm run test:unit - Only unit test execution
-npm run test:coverage - Only unit test execution
-npm test - Unit test execution with Coverage
-npm run setup-mocks - set mocks for Functional testing execution
-npm run test:component - Functional testing execution
+- npm start - Node server start
+- npm run debug - Node server debugger
+- npm run format - Eslint execution.
+- npm run test:unit - Only unit test execution
+- npm run test:coverage - Only unit test execution
+- npm test - Unit test execution with Coverage
+- npm run setup-mocks - set mocks for Functional testing execution
+- npm run test:component - Functional testing execution
 
 All the above tests must pass for a successful build.
 
