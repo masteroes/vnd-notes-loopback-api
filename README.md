@@ -1,5 +1,7 @@
 # vnd-notes-loopback-api API
 
+## Node 8+
+
 ## Description
 
 The channel API for storing , uploading attachments, and getting geolocation for address using storage and google apis (written in javascript and loopback framework). This API acts as the interface between the Frontend and the Google Api , mongodb and storage services e.g. S3.

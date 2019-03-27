@@ -1,0 +1,10 @@
+{
+  "timeout": 20000,
+  "disable": false,
+  "openTimeoutInMilliseconds": 50000,
+  "errorThresholdPercentage": 5,
+  "minimumRequestForHealthCheck": 5,
+  "executionTrackWindow": 10000,
+  "windowBucket": 10,
+  "downstream": "UNKNOWN"
+}

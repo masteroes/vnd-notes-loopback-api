@@ -24,6 +24,7 @@
     "cors": "^2.5.2",
     "dotenv": "7.0.0",
     "helmet": "^3.10.0",
+    "hystrixjs": "0.2.0",
     "loopback": "^3.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^6.2.0",
