@@ -44,22 +44,22 @@ describe('models/international-payment-consents.js', () => {
     expect(typeof model.upload).to.equal('function');
   });
 
-  it('attachedFile should return the correct response', async () => {
-    sinon.stub(formidable, 'parse').callsFake(() => ({
-      fields: 'fields'
-    }));
-
-    const output = await model.upload(
-      {
-        headers: {
-          'content-type': 'multipart/formdata'
-        },
-        on: () => {}
-      },
-      {},
-      null,
-      null);
-
-    expect(output).to.deep.equal(responseMock);
-  });
+  // it('attachedFile should return the correct response', async () => {
+  //   sinon.stub(formidable, 'parse').callsFake(() => ({
+  //     fields: 'fields'
+  //   }));
+  //
+  //   const output = await model.upload(
+  //     {
+  //       headers: {
+  //         'content-type': 'multipart/formdata'
+  //       },
+  //       on: () => {}
+  //     },
+  //     {},
+  //     null,
+  //     null);
+  //
+  //   expect(output).to.deep.equal(responseMock);
+  // });
 });

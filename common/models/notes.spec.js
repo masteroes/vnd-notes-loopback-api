@@ -7,7 +7,7 @@ const responseMock = {
   'createdAt': '2019-03-26T01:56:24.314Z',
   'updatedAt': '2019-03-26T01:56:24.314Z'
 };
-describe('models/international-payment-consents.js', () => {
+describe('models /notes.js', () => {
   let model;
 
   beforeEach(() => {
