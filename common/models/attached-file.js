@@ -6,8 +6,8 @@ const formidable = require('formidable');
 
 const BUCKET = 'test';
 
-module.exports = function (Attachedfile) {
-  Attachedfile.upload = function (req, res, body, cb) {
+module.exports = (Attachedfile) => {
+  Attachedfile.upload = (req, res, body, cb) => {
     try {
       const { name: storageName, root: storageRoot } = Attachedfile.app.dataSources.storage.settings;
 
@@ -40,7 +40,7 @@ module.exports = function (Attachedfile) {
     });
 
     const fieldsPromise = new Promise((resolve, reject) => {
-      form.parse(req, function (error, fields, files) {
+      form.parse(req, (error, fields, files) => {
         if (error) return reject(error);
 
         resolve(fields);

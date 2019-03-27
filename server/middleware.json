@@ -45,8 +45,9 @@
     "loopback#urlNotFound": {}
   },
   "final:after": {
+    "./middleware/error-handler": {},
     "strong-error-handler": {
-      "disableStackTrace": true
+
     }
   }
 }

@@ -1,0 +1,24 @@
+version: '3'
+services:
+  app:
+    build: .
+    depends_on:
+      - mock-server
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run dev
+    environment:
+      - NODE_ENV=development
+      - APP_HOST=0.0.0.0
+      - APP_PORT=3000
+      - MOCK_SERVER_HOST=mock-server
+      - MOCK_SERVER_PORT=1080
+    ports:
+      - '3000:3000'
+  mock-server:
+    image: jamesdbloom/mockserver
+    environment:
+      - JVM_OPTIONS=-Dmockserver.enableCORSForAPI=false
+    ports:
+      - '1080:1080'

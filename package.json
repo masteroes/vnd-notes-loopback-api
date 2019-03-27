@@ -8,18 +8,23 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node .",
+    "dev": "nodemon --exec \"(npm run test:unit --silent && npm run test:component:supertest --silent) & npm start --silent\"",
+    "watch": "nodemon .",
+    "debug": "DEBUG=* node .",
+    "format": "semistandard --env mocha --fix",
     "start:mock:server": "docker run -it -d -p 1080:1080 jamesdbloom/mockserver",
     "setup-mocks": "node ./mocks/mock-server/setup.js",
     "test:coverage": "nyc",
     "test:unit": "mocha --exit './common/**/*.js'",
-    "format": "semistandard --env mocha --fix",
-    "test": "npm run test:coverage npm run test:unit "
+    "test:component": "mocha  --exit --timeout 100000 --reporter mochawesome './tests/component/supertest/**/*.spec.js'",
+    "test": "npm run test:coverage npm run test:unit &&  npm run test:component"
   },
   "dependencies": {
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "dotenv": "7.0.0",
     "helmet": "^3.10.0",
+    "hystrixjs": "0.2.0",
     "loopback": "^3.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^6.2.0",
@@ -53,6 +58,7 @@
     ],
     "exclude": [
       "common/**/*.spec.js",
+      "common/**/*attached-file.js",
       "server/boot/*",
       "server/datasources/*",
       "server/server.js"

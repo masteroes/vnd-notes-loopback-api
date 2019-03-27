@@ -8,13 +8,13 @@ const expectedResponse = [
   }
 ];
 
-const geoLocationEndpoint = '/api/locations/geocode';
+const geoLocationEndpoint = '/notes/v1/locations/geocode';
 
 const validHeaders = {
   'content-type': 'application/json'
 };
 
-describe('POST /international-payment-consents', function () {
+describe('POST /locations/geocode', function () {
   it('should return 201 the correct response if downstream system returns response', async () => {
 
     supertest(server)

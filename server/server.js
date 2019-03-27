@@ -2,6 +2,7 @@
 
 var loopback = require('loopback');
 var boot = require('loopback-boot');
+const circuitBreaker = require('./utils/circuit-breaker-setup');
 var logger = require('loopback-component-logger')();
 require('dotenv').config();
 
@@ -11,6 +12,9 @@ app.start = function () {
   // start the web server
   return app.listen(function () {
     app.emit('started');
+
+    circuitBreaker.initialize(app, 'server/circuit-breaker');
+
     var baseUrl = app.get('url').replace(/\/$/, '');
     logger.info('Web server listening at: %s', baseUrl);
   });
