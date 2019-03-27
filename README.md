@@ -61,3 +61,15 @@ npm run setup-mocks - set mocks for Functional testing execution
 npm run test:component - Functional testing execution
 
 All the above tests must pass for a successful build.
+
+#Usage
+```
+curl -X POST -F file=@hello.txt -F name=Hello http://localhost:3000/notes/v1/attachedFiles/upload
+{"name":"Hello","filename":"hello.txt","type":"text/plain","size":25,"id":"5c99747c22135d199ab1d3af"}
+
+curl -X GET --header 'Accept: application/json' 'http://localhost:3000/notes/v1/locations/geocode?street=eiffel%20tower&city=PARIS&zipcode=78140'
+
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'client-id: userId' -d '{ \
+   "content": "string" \
+ }' 'http://localhost:3000/notes/v1/Notes/createNote'
+```

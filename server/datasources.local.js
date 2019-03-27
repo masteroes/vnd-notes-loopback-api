@@ -2,7 +2,7 @@ module.exports = {
   'notesDB': {
     'host': process.env.MONGO_HOST || 'localhost',
     'port': process.env.MONGO_PORT || '27017',
-    'url': process.env.MONGO || '',
+    'url': process.env.MONGO_URL || '',
     'database': process.env.MONGO_DB || 'myDB',
     'password': process.env.MONGO_PSWD || '',
     'name': process.env.MONGO_COLLECTION || 'notesDB',
