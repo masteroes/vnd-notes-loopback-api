@@ -1,4 +1,4 @@
-# vnd-notes-loopback-api API
+# vnd-notes-loopback-api
 
 ## Node 8+
 
